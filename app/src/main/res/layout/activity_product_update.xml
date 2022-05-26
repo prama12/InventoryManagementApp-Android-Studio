@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/LightGrey">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/Green"
+        app:titleTextColor="@color/White"
+        app:title="Product Name"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:padding="10dp">
+
+        <LinearLayout
+            style="@style/padding_new_product"
+            android:id="@+id/product_name_layout">
+
+            <TextView
+                style="@style/new_product_txt_element"
+                android:text="Name of the product:"
+                android:inputType="none">
+            </TextView>
+
+            <EditText
+                android:id="@+id/product_name"
+                style="@style/editText"
+                android:background="@color/White"
+                android:paddingStart="4dp"
+                android:hint="Name of the product:"
+                android:inputType="none">
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/padding_new_product"
+            android:layout_below="@+id/product_name_layout"
+            android:id="@+id/card_no_layout">
+
+            <TextView
+                style="@style/new_product_txt_element"
+                android:text="Product No"
+                android:inputType="none">
+            </TextView>
+
+            <TextView
+                android:id="@+id/card_no"
+                style="@style/editText"
+                android:background="@color/White"
+                android:paddingStart="4dp"
+                android:hint="Product No"
+                android:inputType="none" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/padding_new_product"
+            android:layout_below="@+id/card_no_layout"
+            android:id="@+id/model_no_layout">
+
+            <TextView
+                style="@style/new_product_txt_element"
+                android:text="Modal"
+                android:inputType="none">
+            </TextView>
+
+            <EditText
+                android:id="@+id/model_no"
+                style="@style/editText"
+                android:background="@color/White"
+                android:paddingStart="4dp"
+                android:hint="Modal"
+                android:inputType="none" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/padding_new_product"
+            android:layout_below="@+id/model_no_layout"
+            android:id="@+id/quantity_layout">
+
+            <TextView
+                style="@style/new_product_txt_element"
+                android:text="Piece:"
+                android:inputType="none">
+            </TextView>
+
+            <EditText
+                android:id="@+id/quantity"
+                style="@style/editText"
+                android:background="@color/White"
+                android:paddingStart="4dp"
+                android:hint="Product Quantity"
+                android:inputType="none" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/place_layout"
+            style="@style/padding_new_product"
+            android:layout_below="@+id/quantity_layout">
+
+            <TextView
+                style="@style/new_product_txt_element"
+                android:text="Location:"
+                android:inputType="none">
+            </TextView>
+
+
+            <EditText
+                android:id="@+id/place"
+                style="@style/editText"
+                android:background="@color/White"
+                android:paddingStart="4dp"
+                android:hint="Location:"
+                android:inputType="none" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/padding_new_product"
+            android:id="@+id/price_label_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/place_layout"
+            android:weightSum="2"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/product_view_txt_element"
+                android:text="Purchase price"
+                android:layout_marginEnd="2dp"
+                android:gravity="center"
+                android:inputType="none">
+            </TextView>
+
+            <TextView
+                style="@style/product_view_txt_element"
+                android:layout_marginStart="2dp"
+                android:text="Sale price"
+                android:gravity="center"
+                android:inputType="none">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/price_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_label_layout"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_marginTop="2dp"
+                android:id="@+id/price_buy"
+                style="@style/editText"
+                android:background="@color/White"
+                android:paddingStart="4dp"
+                android:layout_marginEnd="2dp"
+                android:hint="Purchase Price"
+                android:layout_weight="1"
+                android:inputType="numberDecimal">
+            </EditText>
+
+            <EditText
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="2dp"
+                android:id="@+id/price_sell"
+                style="@style/editText"
+                android:background="@color/White"
+                android:paddingStart="4dp"
+                android:hint="Sale price"
+                android:layout_weight="1"
+                android:inputType="numberDecimal">
+            </EditText>
+
+        </LinearLayout>
+
+
+        <EditText
+            android:layout_marginTop="8dp"
+            android:id="@+id/description"
+            style="@style/editText"
+            android:paddingStart="4dp"
+            android:hint="Description(Maximum 60 characters)"
+            android:background="@color/White"
+            android:layout_height="100dp"
+            android:layout_below="@+id/price_layout"
+            android:inputType="none"
+            android:maxLength="60"/>
+
+        <Button
+            android:id="@+id/update_button"
+            android:padding="@dimen/fab_margin"
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/layout_rounded_corners"
+            android:backgroundTint="@color/buttonRed"
+            android:text="@string/update_button_text"
+            android:layout_below="@+id/description"
+            android:textColor="@color/White"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+</RelativeLayout>
